@@ -3,7 +3,7 @@ const dotenv=require('dotenv');
 dotenv.config({path:'./config.env'});
 
 process.on('uncaughtException',err=>{
-    console.log('uncaughtRejection',err.message);
+    
     process.exit(1);
     
 })
@@ -24,7 +24,6 @@ const server=app.listen(port,()=>{
 });
 
 process.on('unhandledRejection',err=>{
-    console.log('unhandledRejection',err.message);
     server.close(()=>{
         process.exit(1);
     })

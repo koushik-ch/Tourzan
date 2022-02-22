@@ -82,7 +82,6 @@ const userSchema=new mongoose.Schema({
 userSchema.pre(/^find/,function(next){
      //this is a query middleware
      this.find({active:{$ne:false}});
-     console.log('Query middleware');
      next();
 })
 

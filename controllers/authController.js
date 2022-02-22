@@ -36,7 +36,7 @@ const createSendToken=(user,statusCode,res)=>{
 
 exports.signup=async (req,res,next)=>{
     try{
-    console.log(req.body);
+    
     const user=await User.create(req.body);
     
     const url=`${req.protocol}://${req.get('host')}/me`;
