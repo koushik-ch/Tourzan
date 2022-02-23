@@ -27,6 +27,11 @@ process.on('unhandledRejection',err=>{
     server.close(()=>{
         process.exit(1);
     })
-    
 })
 
+process.on('SIGTERM',()=>{
+    console.log("Sigterm received");
+    server.close(()=>{
+        console.log("Process terminated after sigterm");
+    })
+})
